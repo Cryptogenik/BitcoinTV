@@ -326,6 +326,7 @@
               </div>
               <div class="card-body">
                   <div class="clock" id="clock1" style="margin-left: 23px; height: 100px;"></div>
+                  <div class="clock" id="clock2" style="margin-left: 23px; height: 100px;"></div>
               </div>
             </div>
           </div>
@@ -421,10 +422,16 @@ start.setHours(-5,0,0,0)
 var now   = new Date();
 
 var diff = (now.getTime() - start.getTime()) / 1000;
-
+var hexCountdown = new Date('November 19, 2020 12:01:01')
 	var clock = $('#clock1').FlipClock(diff, {
 		clockFace: 'HourlyCounter',
 		countdown: false,
+		showSeconds: true
+	});
+
+  var clock = $('#clock2').FlipClock(hexCountdown, {
+		clockFace: 'DailyCounter',
+		countdown: true,
 		showSeconds: true
 	});
 
